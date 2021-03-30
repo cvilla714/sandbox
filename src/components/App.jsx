@@ -1,17 +1,19 @@
 import React from "react";
-// import emojis from "../emojipedia";
-import Emojicard from "./emojitcard";
+import emojis from "../emojipedia";
+import Emojic from "./emojitcard";
 
-// function createEmojiCard(emoji) {
-//   return (
-//     <EmojiCard
-//       key={emoji.id}
-//       emoji={emoji.emoji}
-//       name={emoji.name}
-//       meaning={emoji.meaning}
-//     />
-//   );
-// }
+console.log(emojis);
+
+function createEmojiCard(emoji) {
+  return (
+    <Emojic
+      key={emoji.id}
+      emoji={emoji.emoji}
+      name={emoji.name}
+      meaning={emoji.meaning}
+    />
+  );
+}
 
 function App() {
   return (
@@ -20,11 +22,7 @@ function App() {
         <span>emojipedia</span>
       </h1>
 
-      <dl className="dictionary">
-        <Emojicard />
-        <Emojicard />
-        <Emojicard />
-      </dl>
+      <dl className="dictionary">{emojis.map(createEmojiCard)}</dl>
     </div>
   );
 }
