@@ -1,5 +1,6 @@
 import React from "react";
 import emojis from "../emojipedia";
+import Emojicard from "./emojitcard";
 
 function createEmojiCard(emoji) {
   return (
